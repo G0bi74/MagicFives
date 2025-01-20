@@ -1,6 +1,8 @@
 #include <algorithm>
 #include <iostream>
 #include <vector>
+
+
 int findMedian(std::vector<int> temp_arr) {
     std::sort(temp_arr.begin(), temp_arr.end());
     int size = temp_arr.size();
@@ -52,11 +54,20 @@ int magicFives(std::vector<int> & arr, int k) {
 }
 
 int main() {
-    std::vector<int> arr = {12, 3, 5, 7, 19, 26, 23, 8, 15, 1, 17, 10};
-    int k = 5; // Szukamy 5-tego co do wielkości elementu
 
-    int result = magicFives(arr, k);
-    std::cout << "5-ty co do wielkosci element: " << result << std::endl;
+    int number_of_tests;
+    std::cin >> number_of_tests;
+    for (int i = 0; i < number_of_tests; i++) {
+        int number_of_values, tmp, k;
+        std::vector<int> arr;
+        std::cin >> number_of_values;
+        while (number_of_values--) {
+            std::cin >> tmp;
+            arr.push_back(tmp);
+        }
+        std::cin >> k;
+        int result = magicFives(arr, k);
+        std::cout << result << std::endl;
+    }
     return 0;
-
 }
